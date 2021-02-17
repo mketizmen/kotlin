@@ -9,14 +9,12 @@ kotlin {
     explicitApi()
 }
 
-description = "Kotlin KLIB Library Commonizer"
+description = "Kotlin KLIB Library Commonizer API"
 publish()
 
 dependencies {
-    api(kotlinStdlib())
-
-    implementation(project(":native:kotlin-native-utils"))
-    testCompile(project(":kotlin-test::kotlin-test-junit"))
+    implementation(kotlinStdlib())
+    testImplementation(project(":kotlin-test::kotlin-test-junit"))
     testImplementation(commonDep("junit:junit"))
     testImplementation(projectTests(":compiler:tests-common"))
     testRuntimeOnly(project(":native:kotlin-klib-commonizer"))
